@@ -7,7 +7,8 @@ import { JwtService } from '@nestjs/jwt';
 export class AuthService {
     constructor(private jwtservice: JwtService){}
     login(credenciales: LoginAuthDto){
-        let payload= {email:"admin@gmail.com", id:1}  //ojo las comillas
+
+        let payload= {email:"admin@gmail.com", id:1}  
         const token= this.jwtservice.sign(payload)
         return {token:token};
 
